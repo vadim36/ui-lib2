@@ -10,6 +10,6 @@
 
 :root {
   @each $nameColor, $color in map-get($root, color) {
-    --#{$nameColor}-color: hsl(#{$color});
+    --#{$nameColor}-color: $color;
   }
 }
