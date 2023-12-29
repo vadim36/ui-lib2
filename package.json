@@ -2,10 +2,19 @@
   "name": "ui-lib2",
   "version": "0.0.1",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "dev": "npx webpack --mode development",
+    "build": "npx webpack --mode production",
+    "watch": "npx webpack --mode development --watch"
+  },
   "author": "Vadim Medvedev <vadim130809@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "css-loader": "^6.8.1",
+    "sass": "^1.69.6",
+    "style-loader": "^3.3.3",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.3.3",
     "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4"
   },
