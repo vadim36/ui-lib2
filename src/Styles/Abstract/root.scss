@@ -1,0 +1,15 @@
+@use 'main' as *;
+
+:root {
+  @each $name, $values in $root {
+    @each $nameValue, $value in $values {
+      --#{$name}-#{$nameValue}: #{$value};
+    }
+  }
+}
+
+:root {
+  @each $nameColor, $color in map-get($root, color) {
+    --#{$nameColor}-color: hsl(#{$color});
+  }
+}
