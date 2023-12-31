@@ -1,14 +1,21 @@
 @use '../Abstract/main' as *;
 @use 'main' as *;
+@use '../Errors/errors' as *;
 
 @each $name, $options in $utils {
-  $shortcut: map-get($options, shortcut);
-  $styles: map-get($options, styles);
-
-  @each $property, $values in $styles {
-    @each $typeValue, $value in map-get($root, $values) {
-      .#{$shortcut}-#{$typeValue} {
-        #{$property}: $value;
+  @if (test-util-errors($options) == true) {
+    $shortcut: map-get($options, shortcut);
+    $styles: map-get($options, styles);
+  
+    @each $property, $values in $styles {
+      @each $typeValue, $value in map-get($root, $values) {
+        @if (map-has-key($options, requires)) {
+          @debug true;
+        }
+  
+        .#{$shortcut}-#{$typeValue} {
+          #{$property}: $value;
+        }
       }
     }
   }

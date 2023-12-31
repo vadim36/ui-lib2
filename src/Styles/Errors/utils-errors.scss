@@ -1,0 +1,28 @@
+@function test-util-errors($options) {
+  @if (type-of($options) != map) {
+    @debug $options;
+    @error 'Not valid type of options';
+  }
+
+  @if (map-has-key($options, shortcut) != true) {
+    @debug map-get($options, shortcut);
+    @error 'Not field "shortcut" in options';
+  }
+
+  @if (type-of(map-get($options, shortcut)) != string) {
+    @debug map-get($options, shortcut);
+    @error 'Not valid type of field "shortcut"';
+  }
+
+  @if (map-has-key($options, styles) != true) {
+    @debug map-get($options, styles);
+    @error 'Not field "styles" in options';
+  }
+
+  @if (type-of(map-get($options, styles)) != map) {
+    @debug map-get($options, styles);
+    @error 'Not valid type of field "styles"';
+  }
+
+  @return true;
+}
