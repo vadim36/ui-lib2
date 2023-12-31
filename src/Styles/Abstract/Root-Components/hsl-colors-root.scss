@@ -1,0 +1,7 @@
+@use '../Components-Temp/hsl-colors.tmp' as *;
+
+:root {
+  @each $colorName, $color in $hsl-colors-tmp {
+    --#{$colorName}-hsl-color: #{$color};
+  }
+}

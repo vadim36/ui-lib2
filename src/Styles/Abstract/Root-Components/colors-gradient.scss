@@ -1,0 +1,18 @@
+@use 'sass:map';
+
+@use 'colors' as *;
+@use 'hsl-colors-root' as *;
+@use '../Components-Temp/color-title.tmp.scss' as *;
+
+$primaryDeg: 75deg;
+
+$color-gradients: ();
+
+@each $colorName, $colorTitle in $color-titles {
+  $color-gradients: map.set($color-gradients, $colorTitle,
+  linear-gradient(
+    $primaryDeg,
+    map-get($colors, $colorTitle),
+    hsl(var(--#{$colorTitle}-hsl-color) / .5)
+  ));
+}

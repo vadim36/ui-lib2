@@ -1,32 +1,34 @@
-@use 'colors_temp' as *;
+@use 'color.tmp.scss' as *;
+@use 'color-title.tmp.scss' as *;
+@use 'color-title.tmp.scss' as *;
 
-$hsl-colors: (
-  primary: (
+$hsl-colors-tmp: (
+  map-get($color-titles, 'primary'): (
     map-get($colorParts, "--h-primary")
     map-get($colorParts, "--s-100")
     map-get($colorParts, "--l-100")
   ),
-  secondary: (
+  map-get($color-titles, 'secondary'): (
     map-get($colorParts, "--h-primary")
     map-get($colorParts, "--s-100")
     map-get($colorParts, "--l-0")
   ),
-  accent: (
+  map-get($color-titles, 'accent'): (
     map-get($colorParts, "--h-accent")
     map-get($colorParts, "--s-50")
     map-get($colorParts, "--l-50")
   ),
-  secondary-accent: (
+  map-get($color-titles, 'secondary-accent'): (
     map-get($colorParts, "--h-secondary-accent")
     map-get($colorParts, "--s-100")
     map-get($colorParts, "--l-50")
   ),
-  success: (
+  map-get($color-titles, 'success'): (
     map-get($colorParts, "--h-success")
     map-get($colorParts, "--s-50")
     map-get($colorParts, "--l-50")
   ),
-  danger: (
+  map-get($color-titles, 'danger'): (
     map-get($colorParts, "--h-primary")
     map-get($colorParts, "--s-75")
     map-get($colorParts, "--l-55")

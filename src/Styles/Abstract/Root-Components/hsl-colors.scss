@@ -1,0 +1,9 @@
+@use 'sass:map';
+
+@use '../Components-Temp/hsl-colors.tmp' as *;
+
+$hsl-colors: ();
+
+@each $colorName, $color in $hsl-colors-tmp {
+  $hsl-colors: map.set($hsl-colors, $colorName, $color);
+}

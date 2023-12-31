@@ -1,15 +1,10 @@
 @use 'main' as *;
+@use 'Components-Temp/color-title.tmp.scss' as *;
 
 :root {
   @each $name, $values in $root {
     @each $nameValue, $value in $values {
       --#{$name}-#{$nameValue}: #{$value};
     }
-  }
-}
-
-:root {
-  @each $nameColor, $color in map-get($root, color) {
-    --#{$nameColor}-color: $color;
   }
 }

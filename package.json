@@ -1,6 +1,6 @@
 {
   "name": "ui-lib2",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "main": "index.js",
   "scripts": {
     "dev": "npx webpack --mode development",

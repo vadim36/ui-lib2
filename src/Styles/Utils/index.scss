@@ -1,13 +1,15 @@
 @use '../Abstract/main' as *;
 @use 'main' as *;
 
-@each $property, $options in $utils {
-  $nameUtil: map-get($options, name);
-  $valueUtil: map-get($options, value);
+@each $name, $options in $utils {
+  $shortcut: map-get($options, shortcut);
+  $styles: map-get($options, styles);
 
-  @each $nameValue, $value in map-get($root, $valueUtil) {
-    .#{$nameUtil}-#{$nameValue} {
-      #{$property}: $value;
+  @each $property, $values in $styles {
+    @each $typeValue, $value in map-get($root, $values) {
+      .#{$shortcut}-#{$typeValue} {
+        #{$property}: $value;
+      }
     }
   }
 } 
