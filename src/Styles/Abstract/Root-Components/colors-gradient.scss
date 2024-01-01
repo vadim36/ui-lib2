@@ -9,10 +9,15 @@ $primaryDeg: 75deg;
 $color-gradients: ();
 
 @each $colorName, $colorTitle in $color-titles {
+  --color-opacity: 1;
+  $color-tmp: map-get($colors, $colorTitle);
+  $color: hsla(hue($color-tmp), saturation($color-tmp), lightness($color-tmp), 
+    var(--color-opacity));
+
   $color-gradients: map.set($color-gradients, $colorTitle,
   linear-gradient(
     $primaryDeg,
-    map-get($colors, $colorTitle),
+    $color,
     hsl(var(--#{$colorTitle}-hsl-color) / .5)
   ));
 }
