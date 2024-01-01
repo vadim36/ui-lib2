@@ -1,4 +1,4 @@
-//!BG, BORDERS, TEXT-COLORS, DISPLAYS LINK, UNDERLINE, OPACITY, POSITION, SHADOW, SIZING, TEXT, VIZIBILITY, SPACES, HOVER and ACTIVE, INTERACTIVE
+//!BG, BORDERS, TEXT-COLORS, DISPLAYS LINK, UNDERLINE, OPACITY, POSITION, SHADOW, SIZING, TEXT, VIZIBILITY, SPACES, HOVER and ACTIVE
 
 $utils: (
   background-color: (
@@ -10,13 +10,16 @@ $utils: (
   backround-gradient: (
     shortcut: 'bg-gradient',
     styles: (
-      background-image: color-gradient
+      background-image: color-gradients
     )
   ),
   background-opacity: (
     shortcut: 'bg-opacity',
+    requires: (
+      background-color or background-gradient
+    ),
     styles: (
-      background: color-opacity
+      
     )
   )
   //border: (
